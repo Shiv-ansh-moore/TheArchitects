@@ -1,0 +1,25 @@
+.the{
+    animation: move 2s infinite alternate;
+}
+
+.rchitects{
+    animation: mover 2s alternate infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(73px);
+    }
+    to{
+        transform: translate(0)
+    }
+}
+
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translate(-190)
+    }
+}

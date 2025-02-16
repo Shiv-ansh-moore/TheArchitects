@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-background`}>
-        <Navbar />
+        <div className="flex justify-center h-screen items-center">
+          <Navbar />
+        </div>
         {children}
       </body>
     </html>
