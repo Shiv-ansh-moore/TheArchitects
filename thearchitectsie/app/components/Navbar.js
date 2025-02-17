@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "./Fade_in.module.css";
 
 export default function Navbar() {
   return (
@@ -12,9 +13,8 @@ export default function Navbar() {
             alt="Logo of The Architects"
           />
         </button>
-        <button></button>
       </div>
-      <div className="ml-auto flex flex-col justify-center">
+      <div className={`ml-auto flex flex-col justify-center ${styles.fadeIn}`}>
         <ul className="flex">
           <button>
             <li className="ml-8 text-2xl">Home</li>

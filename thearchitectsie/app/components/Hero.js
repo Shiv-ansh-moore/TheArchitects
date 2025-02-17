@@ -1,8 +1,9 @@
 import Image from "next/image";
+import styles from "./Fade_in.module.css";
 
 export default function Hero() {
   return (
-    <div className="mt-32">
+    <div className={`mt-32 ${styles.fadeIn}`}>
       <div className="flex ml-1">
         <div className="flex flex-col justify-center mr-1">
           <Image src="\RTE.svg" height={0} width={26} alt="RTE Logo" />
