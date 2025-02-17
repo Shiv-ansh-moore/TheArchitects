@@ -1,21 +1,23 @@
+"use client";
+
 import styles from "./Title_logo.module.css";
 
 export default function Title_logo() {
   return (
-    <div className="flex">
+    <div className={`flex ${styles.titleLogo}`}>
       <svg
-        width="280"
-        height="53"
+        // width="280"
+        // height="53"
         viewBox="0 0 280 53"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="280" height="53" fill="#F5F5F5" />
+        <rect width="280" height="53" fill="" />
         <g id="Group 1">
           <g id="Mask group">
             <mask
               id="mask0_0_1"
-              maskType="alpha"
+              style={{ maskType: "alpha" }}
               maskUnits="userSpaceOnUse"
               x="0"
               y="0"
@@ -47,7 +49,7 @@ export default function Title_logo() {
           <g id="Mask group_2">
             <mask
               id="mask1_0_1"
-              maskType="alpha"
+              style={{ maskType: "alpha" }}
               maskUnits="userSpaceOnUse"
               x="79"
               y="0"

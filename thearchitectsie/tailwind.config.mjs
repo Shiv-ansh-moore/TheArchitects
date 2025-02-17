@@ -9,7 +9,8 @@ export default {
     extend: {
       colors: {
         background: "#FFFBF5",
-        foreground: "var(--foreground)",
+        architectsRed: "#913B2E",
+        architectsGrey: "#D9D9D9",
       },
     },
   },

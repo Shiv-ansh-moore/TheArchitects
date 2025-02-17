@@ -1,9 +1,14 @@
 .the{
-    animation: move 2s infinite alternate;
+    animation: move 6s alternate;
 }
 
 .rchitects{
-    animation: mover 2s alternate infinite;
+    animation: mover 6s alternate;
+}
+
+.titleLogo{
+    height: 106px;
+    width: 560px;
 }
 
 @keyframes move {
@@ -11,15 +16,15 @@
         transform: translateX(73px);
     }
     to{
-        transform: translate(0)
+        transform: translate(0px)
     }
 }
 
 @keyframes mover {
     from {
-        transform: translateX(0);
+        transform: translateX(-190);
     }
     to{
-        transform: translate(-190)
+        transform: translate(0)
     }
 }
