@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./Title_logo.module.css";
 
 export default function Title_logo() {
@@ -12,7 +10,7 @@ export default function Title_logo() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="280" height="53" fill="" />
+        <rect width="280" height="53" fill="none" />
         <g id="Group 1">
           <g id="Mask group">
             <mask

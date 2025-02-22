@@ -1,14 +1,20 @@
+.everything {
+  opacity: 0;
+  animation: everything 2s forwards;
+  animation-delay: 2.5s;
+}
+
 .the {
-  animation: movethe 2s;
+  animation: movethe 1.5s;
 }
 
 .rchitects {
-  animation: moverchitects 2s;
+  animation: moverchitects 1.5s;
 }
 
 .titleLogo {
-  animation: moveTitleLogo 2s forwards;
-  animation-delay: 2s;
+  animation: moveTitleLogo 1s forwards;
+  animation-delay: 1.5s;
   height: 106px;
   width: 560px;
   position: relative;
@@ -22,13 +28,21 @@
     transform: translate(0px);
   }
 }
+@keyframes everything {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes moverchitects {
   0% {
-    transform: translateX(-190);
+    transform: translateX(-190px);
   }
   100% {
-    transform: translate(0);
+    transform: translate(0px);
   }
 }
 @keyframes moveTitleLogo {

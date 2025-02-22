@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Title_logo from "./Title_logo";
 import styles from "./Fade_in.module.css";
 
 export default function Hero() {
@@ -6,13 +7,13 @@ export default function Hero() {
     <div className={`mt-32 ${styles.fadeIn}`}>
       <div className="flex ml-1">
         <div className="flex flex-col justify-center mr-1">
-          <Image src="\RTE.svg" height={0} width={26} alt="RTE Logo" />
+          <Image src="/RTE.svg" height={0} width={26} alt="RTE Logo" />
         </div>
         <p className="font-bold">As seen on DIY SOS</p>
       </div>
       <div className="text-6xl leading-[80px]">
         <h1>
-          Get yout project started
+          Get your project started
           <br /> with
           <strong>trusted experts</strong>
         </h1>
