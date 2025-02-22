@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Portfolio from "./components/Portofolio";
-import Title_logo from "./components/Title_logo";
 import Navbar from "./components/Navbar";
 
 export default function HomePage() {

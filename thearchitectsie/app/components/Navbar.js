@@ -25,20 +25,26 @@ export default function Navbar({ firstLoad }) {
         </Link>
       </div>
       <div
-        className={`ml-auto flex flex-col justify-center ${styles.everything}`}
+        className={`ml-auto flex flex-col justify-center ${
+          firstLoad ? styles.everything : ""
+        }`}
       >
         <ul className="flex">
-          <button>
-            <li className="ml-8 text-2xl">Home</li>
-          </button>
+          <Link href="/">
+            <button>
+              <li className="ml-8 text-2xl">Home</li>
+            </button>
+          </Link>
           <Link href="/about">
             <button>
               <li className="ml-8 text-2xl">About</li>
             </button>
           </Link>
-          <button>
-            <li className="ml-8 text-2xl font-bold">Contact</li>
-          </button>
+          <Link href="/contact">
+            <button>
+              <li className="ml-8 text-2xl font-bold">Contact</li>
+            </button>
+          </Link>
         </ul>
       </div>
     </div>

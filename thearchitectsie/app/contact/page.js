@@ -1,3 +1,9 @@
+import Navbar from "../components/Navbar";
+
 export default function contact() {
-    return(<>Contact</>);
-};
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
+}
