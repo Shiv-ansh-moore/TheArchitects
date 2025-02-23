@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Title_logo from "./Title_logo";
+import Link from "next/link";
 import styles from "./Fade_in.module.css";
 
-export default function Hero() {
+export default function Hero({ firstLoad }) {
   return (
-    <div className={`mt-32 ${styles.fadeIn}`}>
+    <div className={`mt-32 ${firstLoad ? styles.fadeIn : ""}`}>
       <div className="flex ml-1">
         <div className="flex flex-col justify-center mr-1">
           <Image src="/RTE.svg" height={0} width={26} alt="RTE Logo" />
@@ -19,12 +19,16 @@ export default function Hero() {
         </h1>
       </div>
       <div className="flex ml-1 mt-16">
-        <button className="mr-24 bg-architectsRed text-white w-48 h-12 rounded-3xl font-bold text-xl">
-          Contact Now
-        </button>
-        <button className="bg-architectsGrey w-48 h-12 rounded-3xl font-bold text-xl">
-          See Reviews
-        </button>
+        <Link href="/contact">
+          <button className="mr-24 bg-architectsRed text-white w-48 h-12 rounded-3xl font-bold text-xl">
+            Contact Now
+          </button>
+        </Link>
+        <Link href="/about">
+          <button className="bg-architectsGrey w-48 h-12 rounded-3xl font-bold text-xl">
+            About
+          </button>
+        </Link>
       </div>
     </div>
   );

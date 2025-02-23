@@ -5,13 +5,22 @@ import Hero from "./components/Hero";
 import Portfolio from "./components/Portofolio";
 import Navbar from "./components/Navbar";
 
+let isFirstLoad = true;
+
 export default function HomePage() {
   // Initially, only TitleLogo is visible
   const [showRest, setShowRest] = useState(false);
-  const [firstLoad, setFirstLoad] = useState(true);
+  const [firstLoad, setFirstLoad] = useState(false);
 
   useEffect(() => {
-    setFirstLoad(true);
+    // On first run (fresh load or refresh), 'isFirstLoad' will be true,
+    // after that it becomes false and remains so for any client-side route transitions.
+    if (isFirstLoad) {
+      setFirstLoad(true);
+      isFirstLoad = false;
+    } else {
+      setFirstLoad(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -26,11 +35,20 @@ export default function HomePage() {
 
   return (
     <div>
-      <Navbar firstLoad={firstLoad}/>
-      {showRest && (
+      <Navbar firstLoad={firstLoad} />
+      {firstLoad ? (
+        // If `firstLoad` is true, only render Hero/Portfolio if `showRest` is also true
+        showRest && (
+          <div>
+            <Hero firstLoad={firstLoad} />
+            <Portfolio firstLoad={firstLoad} />
+          </div>
+        )
+      ) : (
+        // If `firstLoad` is false, always render Hero/Portfolio
         <div>
-          <Hero />
-          <Portfolio />
+          <Hero firstLoad={firstLoad} />
+          <Portfolio firstLoad={firstLoad} />
         </div>
       )}
     </div>

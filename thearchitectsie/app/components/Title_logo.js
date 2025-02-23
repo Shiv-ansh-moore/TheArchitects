@@ -1,6 +1,6 @@
 import styles from "./Title_logo.module.css";
 
-export default function Title_logo() {
+export default function Title_logo({ aColor = "#913B2E" }) {
   return (
     <div className={`flex ${styles.titleLogo}`}>
       <svg
@@ -114,12 +114,12 @@ export default function Title_logo() {
             <path
               id="bottoma"
               d="M90.432 52.8664H67.1079V47.6177H90.432V52.8664Z"
-              fill="#94443D"
+              fill={aColor}
             />
             <path
               id="topa"
               d="M90.7929 41.1175H97.0018L79.0417 1.14258L60.4462 41.1175H66.5566L78.9719 13.8659L90.7929 41.1175Z"
-              fill="#913B2E"
+              fill={aColor}
             />
           </g>
         </g>

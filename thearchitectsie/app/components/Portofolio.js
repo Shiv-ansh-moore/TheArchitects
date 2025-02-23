@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./Fade_in.module.css";
 
-export default function Portfolio() {
+export default function Portfolio({ firstLoad }) {
   return (
-    <div className={`${styles.fadeIn}`}>
+    <div className={`${firstLoad ? styles.fadeIn : ""}`}>
       <div className="flex items-start">
         <Image
           className="mt-8"
