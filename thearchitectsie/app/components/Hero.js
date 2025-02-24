@@ -15,7 +15,7 @@ export default function Hero({ firstLoad }) {
         <h1>
           Get your project started
           <br /> with
-          <strong>trusted experts</strong>
+          <strong> trusted experts</strong>
         </h1>
       </div>
       <div className="flex ml-1 mt-16">

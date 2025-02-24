@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Title_logo_no_ani from "./Title_logo_no_ani";
 import Link from "next/link";
 import styles from "./Title_logo.module.css";
 import Title_logo from "./Title_logo";
 
-export default function Navbar({ firstLoad }) {
+export default function Navbar({ firstLoad, aColor } ) {
   return (
     <div className="flex">
       <div>
@@ -14,7 +13,7 @@ export default function Navbar({ firstLoad }) {
           <button>
             {firstLoad ? (
               <Title_logo />
-            ) : (<Title_logo_no_ani/>
+            ) : (<Title_logo_no_ani aColor={aColor}/>
               // <Image
               //   src={"/TitleLogo.svg"}
               //   height={53}
