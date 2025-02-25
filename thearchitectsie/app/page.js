@@ -4,17 +4,16 @@ import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Portfolio from "./components/Portofolio";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
 
 let isFirstLoad = true;
 
 export default function HomePage() {
-  // Initially, only TitleLogo is visible
   const [showRest, setShowRest] = useState(false);
   const [firstLoad, setFirstLoad] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   useEffect(() => {
-    // On first run (fresh load or refresh), 'isFirstLoad' will be true,
-    // after that it becomes false and remains so for any client-side route transitions.
     if (isFirstLoad) {
       setFirstLoad(true);
       isFirstLoad = false;
@@ -24,8 +23,6 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    // Wait for TitleLogo's animation to complete.
-    // TitleLogo has a delay of 4s + animation of 2s = 6s total.
     const timer = setTimeout(() => {
       setShowRest(true);
     }, 2500);
@@ -33,22 +30,43 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleAboutClick = () => {
+    setShowAbout(true);
+  };
+
+  const handleHomeClick = () => {
+    setShowAbout(false);
+    setFirstLoad(false);
+  };
+
   return (
     <div>
-      <Navbar firstLoad={firstLoad} />
-      {firstLoad ? (
-        // If `firstLoad` is true, only render Hero/Portfolio if `showRest` is also true
-        showRest && (
-          <div>
-            <Hero firstLoad={firstLoad} />
-            <Portfolio firstLoad={firstLoad} />
-          </div>
-        )
-      ) : (
-        // If `firstLoad` is false, always render Hero/Portfolio
+      {showAbout && (
+        <About
+          handleAboutClick={handleAboutClick}
+          handleHomeClick={handleHomeClick}
+        />
+      )}
+      {!showAbout && (
         <div>
-          <Hero firstLoad={firstLoad} />
-          <Portfolio firstLoad={firstLoad} />
+          <Navbar
+            firstLoad={firstLoad}
+            handleAboutClick={handleAboutClick}
+            handleHomeClick={handleHomeClick}
+          />
+          {firstLoad ? (
+            showRest && (
+              <div>
+                <Hero firstLoad={firstLoad} />
+                <Portfolio firstLoad={firstLoad} />
+              </div>
+            )
+          ) : (
+            <div>
+              <Hero firstLoad={firstLoad} />
+              <Portfolio firstLoad={firstLoad} />
+            </div>
+          )}
         </div>
       )}
     </div>
