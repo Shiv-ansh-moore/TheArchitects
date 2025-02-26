@@ -5,7 +5,10 @@
 
 .fadeOut {
   opacity: 1;
-  animation: fadeOutAnimation 1s fowards;
+  animation: fadeOutAnimation 1s forwards;
+}
+.noAnimation {
+  animation: none !important;
 }
 
 @keyframes fadeInAnimation {
