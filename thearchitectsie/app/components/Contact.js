@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import styles from "./Fade_in.module.css";
+import Form from "./Form";
 
 export default function Contact({ handleHomeClick, handleAboutClick }) {
   return (
@@ -15,12 +16,12 @@ export default function Contact({ handleHomeClick, handleAboutClick }) {
           handleAboutClick={handleAboutClick}
         />
         <div className="flex mt-8">
-          <button
-            className="bg-background w-24 h-8 rounded-3xl font-bold text-xl"
-            onClick={handleHomeClick}
-          >
-            Back
-          </button>
+          <Form />
+        </div>
+        <div className="text-background max-w-96 my-8 text-xl">
+          <p>The architects, 111 patrick st, Dun Laoghaire, Co. Dublin</p>
+          <p>info@thearchitects.ie</p>
+          <p>+353 1 2144 444</p>
         </div>
       </div>
     </div>
