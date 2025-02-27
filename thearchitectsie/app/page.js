@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Portfolio from "./components/Portofolio";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 let isFirstLoad = true;
 
@@ -12,6 +13,7 @@ export default function HomePage() {
   const [showRest, setShowRest] = useState(false);
   const [firstLoad, setFirstLoad] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   useEffect(() => {
     if (isFirstLoad) {
@@ -32,12 +34,30 @@ export default function HomePage() {
 
   const handleAboutClick = () => {
     setShowAbout(true);
+    setShowContact(false)
+  };
+
+  const handleContactClick = () => {
+    setShowContact(true);
+    setShowAbout(false)
   };
 
   const handleHomeClick = () => {
+    // Reset both about and contact when clicking Home
     setShowAbout(false);
+    setShowContact(false);
     setFirstLoad(false);
   };
+
+  // If the contact button has been clicked, show the Contact component.
+  if (showContact) {
+    return (
+      <Contact
+        handleHomeClick={handleHomeClick}
+        handleAboutClick={handleAboutClick}
+      />
+    );
+  }
 
   return (
     <div>
@@ -45,6 +65,7 @@ export default function HomePage() {
         <About
           handleAboutClick={handleAboutClick}
           handleHomeClick={handleHomeClick}
+          handleContactClick={handleContactClick}
         />
       )}
       {!showAbout && (
@@ -53,6 +74,7 @@ export default function HomePage() {
             firstLoad={firstLoad}
             handleAboutClick={handleAboutClick}
             handleHomeClick={handleHomeClick}
+            handleContactClick={handleContactClick}
           />
           {firstLoad ? (
             showRest && (

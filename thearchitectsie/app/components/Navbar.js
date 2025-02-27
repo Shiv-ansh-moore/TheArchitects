@@ -10,6 +10,7 @@ export default function Navbar({
   aColor,
   handleAboutClick,
   handleHomeClick,
+  handleContactClick,
 }) {
   return (
     <div className="flex">
@@ -30,7 +31,7 @@ export default function Navbar({
           <button onClick={handleAboutClick}>
             <li className="ml-8 text-2xl">About</li>
           </button>
-          <button>
+          <button onClick={handleContactClick}>
             <li className="ml-8 text-2xl font-bold">Contact</li>
           </button>
         </ul>
