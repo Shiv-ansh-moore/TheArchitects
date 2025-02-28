@@ -34,12 +34,12 @@ export default function HomePage() {
 
   const handleAboutClick = () => {
     setShowAbout(true);
-    setShowContact(false)
+    setShowContact(false);
   };
 
   const handleContactClick = () => {
     setShowContact(true);
-    setShowAbout(false)
+    setShowAbout(false);
   };
 
   const handleHomeClick = () => {
@@ -79,13 +79,21 @@ export default function HomePage() {
           {firstLoad ? (
             showRest && (
               <div>
-                <Hero firstLoad={firstLoad} />
+                <Hero
+                  firstLoad={firstLoad}
+                  handleAboutClick={handleAboutClick}
+                  handleContactClick={handleContactClick}
+                />
                 <Portfolio firstLoad={firstLoad} />
               </div>
             )
           ) : (
             <div>
-              <Hero firstLoad={firstLoad} />
+              <Hero
+                firstLoad={firstLoad}
+                handleAboutClick={handleAboutClick}
+                handleContactClick={handleContactClick}
+              />
               <Portfolio firstLoad={firstLoad} />
             </div>
           )}

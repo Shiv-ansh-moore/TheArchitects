@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Fade_in.module.css";
 
-export default function Hero({ firstLoad }) {
+export default function Hero({
+  firstLoad,
+  handleContactClick,
+  handleAboutClick,
+}) {
   return (
     <div className={`mt-32 ${firstLoad ? styles.fadeIn : ""}`}>
       <div className="flex ml-1">
@@ -19,16 +23,13 @@ export default function Hero({ firstLoad }) {
         </h1>
       </div>
       <div className="flex ml-1 mt-16">
-        <Link href="/contact">
-          <button className="mr-24 bg-architectsRed text-white w-48 h-12 rounded-3xl font-bold text-xl">
-            Contact Now
-          </button>
-        </Link>
-        <Link href="/about">
-          <button className="bg-architectsGrey w-48 h-12 rounded-3xl font-bold text-xl">
-            About
-          </button>
-        </Link>
+        <button onClick={handleContactClick} className="mr-24 bg-architectsRed text-white w-48 h-12 rounded-3xl font-bold text-xl">
+          Contact Now
+        </button>
+
+        <button onClick={handleAboutClick} className="bg-architectsGrey w-48 h-12 rounded-3xl font-bold text-xl">
+          About
+        </button>
       </div>
     </div>
   );

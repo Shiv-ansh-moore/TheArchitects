@@ -23,6 +23,12 @@ export default function Contact({ handleHomeClick, handleAboutClick }) {
           <p>info@thearchitects.ie</p>
           <p>+353 1 2144 444</p>
         </div>
+        <button
+          className="mr-24 bg-background w-24 h-8 rounded-3xl font-bold text-xl"
+          onClick={handleHomeClick}
+        >
+          Back
+        </button>
       </div>
     </div>
   );
