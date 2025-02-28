@@ -6,6 +6,7 @@ import Portfolio from "./components/Portofolio";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Project from "./components/Projects";
 
 let isFirstLoad = true;
 
@@ -61,6 +62,22 @@ export default function HomePage() {
 
   return (
     <div>
+      {/* <Project
+        handleAboutClick={handleAboutClick}
+        handleContactClick={handleContactClick}
+        handleHomeClick={handleHomeClick}
+        title = {"Sandycove"}
+        location={"Dún Laoghaire"}
+        description={`This is where we will put information on about this project.
+              Filler text Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.`}
+      /> */}
       {showAbout && (
         <About
           handleAboutClick={handleAboutClick}

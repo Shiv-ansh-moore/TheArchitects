@@ -1,7 +1,11 @@
 import Navbar from "./Navbar";
 import styles from "./Fade_in.module.css";
 
-export default function About({ handleAboutClick, handleHomeClick, handleContactClick }) {
+export default function About({
+  handleAboutClick,
+  handleHomeClick,
+  handleContactClick,
+}) {
   return (
     <div>
       <div
