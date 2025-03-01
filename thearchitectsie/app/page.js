@@ -15,6 +15,8 @@ export default function HomePage() {
   const [firstLoad, setFirstLoad] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [showProject, setShowProject] = useState(false);
+  const [projectData, setProjectData] = useState("");
 
   useEffect(() => {
     if (isFirstLoad) {
@@ -33,14 +35,24 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleprojectData = (data) => {
+    setProjectData(data);
+  };
+
+  const handleProjectClick = () => {
+    setShowProject(true);
+  };
+
   const handleAboutClick = () => {
     setShowAbout(true);
     setShowContact(false);
+    setShowProject(false);
   };
 
   const handleContactClick = () => {
     setShowContact(true);
     setShowAbout(false);
+    setShowProject(false);
   };
 
   const handleHomeClick = () => {
@@ -48,6 +60,7 @@ export default function HomePage() {
     setShowAbout(false);
     setShowContact(false);
     setFirstLoad(false);
+    setShowProject(false);
   };
 
   // If the contact button has been clicked, show the Contact component.
@@ -58,26 +71,23 @@ export default function HomePage() {
         handleAboutClick={handleAboutClick}
       />
     );
+  } else if (showProject) {
+    return (
+      <Project
+        handleAboutClick={handleAboutClick}
+        handleContactClick={handleContactClick}
+        handleHomeClick={handleHomeClick}
+        title={projectData.title}
+        location={projectData.location}
+        description={projectData.description}
+        PortImage={projectData.PortImage}
+        alternate={projectData.alternate}
+      />
+    );
   }
 
   return (
     <div>
-      {/* <Project
-        handleAboutClick={handleAboutClick}
-        handleContactClick={handleContactClick}
-        handleHomeClick={handleHomeClick}
-        title = {"Sandycove"}
-        location={"Dún Laoghaire"}
-        description={`This is where we will put information on about this project.
-              Filler text Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.`}
-      /> */}
       {showAbout && (
         <About
           handleAboutClick={handleAboutClick}
@@ -101,7 +111,11 @@ export default function HomePage() {
                   handleAboutClick={handleAboutClick}
                   handleContactClick={handleContactClick}
                 />
-                <Portfolio firstLoad={firstLoad} />
+                <Portfolio
+                  firstLoad={firstLoad}
+                  handleProjectClick={handleProjectClick}
+                  handleprojectData={handleprojectData}
+                />
               </div>
             )
           ) : (
@@ -111,7 +125,11 @@ export default function HomePage() {
                 handleAboutClick={handleAboutClick}
                 handleContactClick={handleContactClick}
               />
-              <Portfolio firstLoad={firstLoad} />
+              <Portfolio
+                firstLoad={firstLoad}
+                handleProjectClick={handleProjectClick}
+                handleprojectData={handleprojectData}
+              />
             </div>
           )}
         </div>

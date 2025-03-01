@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Image from "next/image";
+import styles from "./Fade_in.module.css";
 
 export default function Project({
   handleAboutClick,
@@ -8,7 +9,8 @@ export default function Project({
   title,
   location,
   description,
-
+  PortImage,
+  alternate
 }) {
   return (
     <div>
@@ -18,10 +20,13 @@ export default function Project({
         handleContactClick={handleContactClick}
       />
       <div className="my-16">
-        <button onClick={handleHomeClick} className="font-bold text-3xl mb-4">&larr;</button>
+        <button onClick={handleHomeClick} className="font-bold text-3xl mb-4">
+          &larr;
+        </button>
         <div className="flex">
           <Image
-            src={"/Sandycove.jpg"}
+            src={PortImage}
+            alt={alternate}
             width={"750"}
             height={"563"}
             className="rounded-2xl w-[50vw]"
@@ -31,9 +36,7 @@ export default function Project({
               <h2>{title}</h2>
               <h2 className="font-thin">{location}</h2>
             </div>
-            <p className="text-lg max-w-[50vw]">
-              {description}
-            </p>
+            <p className="text-lg max-w-[50vw]">{description}</p>
           </div>
         </div>
       </div>

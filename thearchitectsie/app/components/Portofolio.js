@@ -1,7 +1,7 @@
 import styles from "./Fade_in.module.css";
 import PortofolioPreview from "./PortofolioPreview";
 
-export default function Portfolio({ firstLoad }) {
+export default function Portfolio({ firstLoad, handleProjectClick, handleprojectData }) {
   return (
     <div className={`${firstLoad ? styles.fadeIn : ""}`}>
       <PortofolioPreview
@@ -19,6 +19,8 @@ export default function Portfolio({ firstLoad }) {
               fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
               proident, sunt in culpa qui officia deserunt mollit anim id est
               laborum.`}
+        handleProjectClick={handleProjectClick}
+        handleprojectData={handleprojectData}
       />
       <PortofolioPreview
         PortImage={"/Cherrywood.jpg"}
@@ -35,6 +37,8 @@ export default function Portfolio({ firstLoad }) {
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est
           laborum.`}
+        handleProjectClick={handleProjectClick}
+        handleprojectData={handleprojectData}
       />
     </div>
   );

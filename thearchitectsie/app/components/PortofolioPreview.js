@@ -7,6 +7,8 @@ export default function PortofolioPreview({
   title,
   location,
   description,
+  handleProjectClick,
+  handleprojectData,
 }) {
   return (
     <div>
@@ -15,12 +17,24 @@ export default function PortofolioPreview({
           <div className="text-2xl mt-32">
             <h3>{title}</h3>
             <h3 className="font-thin">{location}</h3>
-            <button>
+            <button
+              onClick={() => {
+                handleProjectClick();
+                handleprojectData({
+                  PortImage,
+                  alternate,
+                  title,
+                  location,
+                  description,
+                  alternate,
+                });
+              }}
+            >
               <Image
                 className="rounded-3xl"
                 src={PortImage}
-                width={750}
-                height={563}
+                width={618}
+                height={463}
                 alt={alternate}
               />
             </button>
@@ -38,14 +52,26 @@ export default function PortofolioPreview({
           <Image
             className="mt-8"
             src="bigA.svg"
-            height={563}
-            width={750}
+            height={463}
+            width={327}
             alt="The architects Logo"
           />
           <div className="text-2xl ml-auto mt-32">
             <h3>{title}</h3>
             <h3 className="font-thin">{location}</h3>
-            <button>
+            <button
+              onClick={() => {
+                handleProjectClick();
+                handleprojectData({
+                  PortImage,
+                  alternate,
+                  title,
+                  location,
+                  description,
+                  alternate,
+                });
+              }}
+            >
               <Image
                 className="rounded-3xl"
                 src={PortImage}
