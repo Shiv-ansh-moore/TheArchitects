@@ -15,7 +15,7 @@
 .titleLogo {
   animation: moveTitleLogo 1s forwards;
   animation-delay: 1.5s;
-  max-width: 68vw;
+  max-width: 70vw;
   width: 560px;
   position: relative;
 }
@@ -49,7 +49,7 @@
   0% {
   }
   100% {
-    max-width: 60vw;
+    max-width: 70vw;
     width: 280px;
     top: 0;
     left: 0;
