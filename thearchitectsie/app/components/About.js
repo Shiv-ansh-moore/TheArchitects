@@ -9,7 +9,7 @@ export default function About({
   return (
     <div>
       <div
-        className={`bg-architectsRed min-h-screen w-screen -mt-3 -mr-32 -ml-32 absolute ${styles.fadeIn}`}
+        className={`bg-architectsRed min-h-screen w-screen -mt-3 -mx-4 md:-mt-3 md:-mr-32 md:-ml-32 absolute ${styles.fadeIn}`}
       />
       <div className="z-10 relative">
         <Navbar

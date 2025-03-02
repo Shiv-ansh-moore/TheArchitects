@@ -98,6 +98,7 @@ export default function HomePage() {
       {!showAbout && (
         <div>
           <Navbar
+            setFirstLoad={setFirstLoad}
             firstLoad={firstLoad}
             handleAboutClick={handleAboutClick}
             handleHomeClick={handleHomeClick}

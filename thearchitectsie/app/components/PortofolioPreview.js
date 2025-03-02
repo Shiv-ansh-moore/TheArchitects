@@ -11,10 +11,10 @@ export default function PortofolioPreview({
   handleprojectData,
 }) {
   return (
-    <div>
+    <div className="">
       {aLocation === "right" ? (
         <div className="flex items-start">
-          <div className="text-2xl mt-32">
+          <div className="text-2xl md:mt-32 mt-12">
             <h3>{title}</h3>
             <h3 className="font-thin">{location}</h3>
             <button
@@ -40,7 +40,7 @@ export default function PortofolioPreview({
             </button>
           </div>
           <Image
-            className="mt-8 ml-auto"
+            className="hidden md:block mt-8 ml-auto"
             src="/bigARed.svg"
             height={463}
             width={327}
@@ -50,13 +50,13 @@ export default function PortofolioPreview({
       ) : (
         <div className="flex items-start">
           <Image
-            className="mt-8"
+            className="hidden md:block mt-8"
             src="bigA.svg"
             height={463}
             width={327}
             alt="The architects Logo"
           />
-          <div className="text-2xl ml-auto mt-32">
+          <div className="text-2xl ml-auto md:mt-32 mt-12">
             <h3>{title}</h3>
             <h3 className="font-thin">{location}</h3>
             <button
