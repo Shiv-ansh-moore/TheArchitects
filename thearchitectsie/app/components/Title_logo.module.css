@@ -49,8 +49,8 @@
   0% {
   }
   100% {
-    /* max-width: 60vw; */
-    /* width: 280px; */
+    max-width: 60vw;
+    width: 280px;
     top: 0;
     left: 0;
   }
