@@ -29,7 +29,7 @@ export default function Project({
             alt={alternate}
             width={750}
             height={563}
-            className="rounded-2xl w-full md:w-[50vw]"
+            className="w-full md:w-[50vw]"
           />
           <div className="mt-4 md:mt-0 md:ml-8">
             <div className="text-2xl">
