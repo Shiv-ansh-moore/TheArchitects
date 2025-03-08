@@ -31,7 +31,7 @@ export default function PortofolioPreview({
               }}
             >
               <Image
-                className="rounded-3xl"
+                className=""
                 src={PortImage}
                 width={618}
                 height={463}
@@ -73,7 +73,7 @@ export default function PortofolioPreview({
               }}
             >
               <Image
-                className="rounded-3xl"
+                className=""
                 src={PortImage}
                 width={618}
                 height={463}

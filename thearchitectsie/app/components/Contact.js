@@ -7,7 +7,7 @@ export default function Contact({ handleHomeClick, handleAboutClick }) {
     <div>
       {/* Fade-in red background overlay */}
       <div
-        className={`bg-architectsRed min-h-screen w-screen -mt-3 -mx-4 md:-mt-3 md:-mr-32 md:-ml-32 absolute ${styles.fadeIn}`}
+        className={`bg-architectsRed min-h-screen w-screen fixed -mt-3 -mx-4 md:-mt-3 md:-mr-32 md:-ml-32 ${styles.fadeIn}`}
       />
       <div className="z-10 relative">
         <Navbar
@@ -15,7 +15,13 @@ export default function Contact({ handleHomeClick, handleAboutClick }) {
           handleHomeClick={handleHomeClick}
           handleAboutClick={handleAboutClick}
         />
-        <div className="flex mt-8">
+        <button
+          onClick={handleHomeClick}
+          className="font-bold text-3xl mb-4 text-white"
+        >
+          &larr;
+        </button>
+        <div className="flex">
           <Form />
         </div>
         <div className="text-background max-w-96 my-8 text-xl">
@@ -23,12 +29,6 @@ export default function Contact({ handleHomeClick, handleAboutClick }) {
           <p>info@thearchitects.ie</p>
           <p>+353 1 2144 444</p>
         </div>
-        <button
-          className="mr-24 bg-background w-24 h-8 rounded-3xl font-bold text-xl"
-          onClick={handleHomeClick}
-        >
-          Back
-        </button>
       </div>
     </div>
   );
